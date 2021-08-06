@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-class Drop{
-    public:
+struct Drop{
     double x,y;
     bool floor,wet;
 	  Drop(double x, double y){
@@ -53,4 +52,4 @@ int main(){
   cout<<" Run on rain wetness = " << ammount_drops(5.0)<<endl;
 }
 
-//compile with lang++-7 -pthread -std=c++17 -o runorwalkcpp runorwalk.cpp
+//compile with clang++-7 -pthread -std=c++17 -o runorwalkcpp runorwalk.cpp

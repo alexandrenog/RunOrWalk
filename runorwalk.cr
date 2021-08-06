@@ -31,3 +31,4 @@ end
 
 puts "Walk on rain wetness = " +ammount_drops(1.4)
 puts " Run on rain wetness = " +ammount_drops(5.0)
+
