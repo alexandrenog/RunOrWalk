@@ -37,14 +37,11 @@ double  ammount_drops(double walk_speed){
             }
             *dr=d;
         }
-        vector<Drop*> copy;
         for(int i = drops.size()-1;i>=0;i--){
-            if(!drops[i]->floor && !drops[i]->wet){
-                copy.push_back(drops[i]);
+            if(drops[i]->floor || drops[i]->wet){
+                drops.erase (drops.begin()+i);
             }
         }
-        drops.clear();
-        drops=copy;
         x+=walk_speed*dt;
 	}
 
@@ -55,3 +52,5 @@ int main(){
   cout<<"Walk on rain wetness = " << ammount_drops(1.4)<<endl;
   cout<<" Run on rain wetness = " << ammount_drops(5.0)<<endl;
 }
+
+//compile with lang++-7 -pthread -std=c++17 -o runorwalkcpp runorwalk.cpp
