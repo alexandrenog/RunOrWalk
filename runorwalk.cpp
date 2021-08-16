@@ -20,9 +20,8 @@ double  ammount_drops(double walk_speed){
 	double  dt=0.01;
 	vector <Drop*> drops;
 	double  how_wet=0.0;
-    double  times = (int)(dt*adms*xfinal);
 	while(x<=xfinal){
-		for(int i=0; i < times; i++){
+		for(int i=0; i < (int)(dt*adms*xfinal); i++){
 			drops.push_back(new Drop((double)rand()/RAND_MAX*xfinal,2.5)); 
 		}
 		for(auto & dr : drops){
